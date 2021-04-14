@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap&subset=vietnamese"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/styles/metro/notify-metro.css" />
+    <link rel="stylesheet" href="./css/style.css">
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 ">
+                <div class="form-student">
+                    <!--  -->
+                    <h3>Thông tin chi tiết Sinh Viên</h3>
+                    <label for="">Mã SV</label>
+                    <input type="text" name="" id="txtMaSV" />
+
+                    <label for="">Họ tên</label>
+                    <input type="text" name="" id="txtHoTen" />
+
+                    <label for="">Email</label>
+                    <input type="text" name="" id="txtEmail" />
+
+                    <label for="">Số điện thoại</label>
+                    <input type="text" name="" id="txtDienThoai" />
+
+                    <small class="error" id="errorMaSV"></small><br />
+                    <small class="error" id="errorHoTen"></small><br />
+                    <small class="error" id="errorEmail"></small><br />
+                    <small class="error" id="errorDienThoai"></small><br />
+                    <div id="buttonUpdate">
+                        <button type="button" class="btn btn-primary btn-sm" id="txtButtonAdd" >Thêm Sinh
+                            Viên</button>
+                        <button type="button" class="btn btn-success btn-sm" id="txtButtonAddUpdate"
+                            onclick="CapNhatSinhVien(id_hidden.value)">Cập Nhật</button>
+                    </div>
+                    
+
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="list-student">
+                    <h3>Danh sách sinh viên</h3>
+                    <div>
+                        <select id="pagesize" onchange="changePagesize()">
+                            <option value="10" selected>10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        <input type="search" id="timkiemSV" oninput="" style="float: right;">
+                    </div>
+                    <table width="500" border="1" cellpadding="0" cellpading="0">
+                        <thead>
+                            <tr>
+                                <td>STT</td>
+                                <td>Mã SV</td>
+                                <td>Họ tên</td>
+                                <td>Email</td>
+                                <td>Điện thoại</td>
+                                <td>Thao tác</td>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tableDanhSach">
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
+
+
+    <input type="hidden" name="" id="id_hidden">
+    <script src="./js/main.js"></script>
+
+   
+</body>
+
+</html>
